@@ -1,0 +1,34 @@
+{
+  "name": "tododay",
+  "version": "1.0.0",
+  "description": "A modern To-do app",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon api/index.js",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "imports": {
+    "#config/*": "./config/*",
+    "#api/*": "./api/*",
+    "#utils/*": "./api/utils/*"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "http-status": "^1.6.2",
+    "joi": "^17.9.2",
+    "mongoose": "^7.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8"
+  }
+}
