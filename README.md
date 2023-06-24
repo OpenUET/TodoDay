@@ -1,11 +1,17 @@
 # 🔅 TodoDay 🔅
 
-```terminal
-# run React:
+```shell
+# Run app
+yarn dev
+```
+Or:
+```shell
+# Run ReactJS client:
 cd client
 yarn dev
-
-# run NodeJS server:
+```
+```shell
+# Run NodeJS server:
 cd server
 yarn dev
 ```
