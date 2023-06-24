@@ -4,7 +4,7 @@ import nodeLogo from './assets/nodejs.svg'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Avatar from './components/Profile'
+import Profile from './components/Profile'
 import { handleGetUsersAPI } from './services/user'
 
 const logos = [
@@ -65,7 +65,7 @@ function App() {
       <div className='flex gap-2 my-10'>
         {users.length &&
           users.map((profile, index) => {
-            return <Avatar key={index} index={index} profile={profile} />
+            return <Profile key={index} index={index} profile={profile} />
           })}
       </div>
     </>
