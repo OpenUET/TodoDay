@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.weight-track-0 {
+  background-color: #ddd; 
+  height: 2px;
+}
+
+.weight-track-1 {
+  background-color: #5e5e5e; 
+  height: 2px;
+}
+
+.weight-track-2 {
+  background-color: #222222; 
+  height: 2px;
+}
