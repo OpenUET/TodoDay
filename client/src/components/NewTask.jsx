@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function CreateTask() {
+function NewTask({ bcolor }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [taskName, setTaskName] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
@@ -24,12 +24,12 @@ function CreateTask() {
   };
 
   return (
-    <div className="m-8">
+    <div className="w-full">
       <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl"
+        className={`bg-transparent border-[3px] border-[#${bcolor}] border-dashed text-white font-bold py-2 px-4 rounded-2xl w-full`}
         onClick={openModal}
       >
-        Create Task
+        New Task
       </button>
 
       {isModalOpen && (
@@ -93,4 +93,4 @@ function CreateTask() {
   );
 }
 
-export default CreateTask;
+export default NewTask;

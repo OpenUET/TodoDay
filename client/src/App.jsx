@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import { handleGetUsersAPI } from './services/user'
-import CreateTask from './components/CreateTask'
+import EisenBlock from './components/EisenBlock'
+import TrashBlock from './components/TrashBlock'
 
 function App() {
   const [users, setUsers] = useState([])
@@ -17,8 +18,16 @@ function App() {
   }, [])
 
   return (
-    <div>
-      <CreateTask />
+    <div className="flex flex-col bg-transparent w-full h-auto">
+      <div className="text-black m-8 flex items-center justify-center">Tododay</div>
+      <div className="flex">
+        <EisenBlock color={"58cc02"} bcolor={"58a700"} name={"Todo now"}/>
+        <EisenBlock color={"1cb0f6"} bcolor={"1899d6"} name={"Planning"}/>
+      </div>
+      <div className="flex">
+        <EisenBlock color={"ff4b4b"} bcolor={"f81c1c"} name={"Someone can do it for me"}/>
+        <TrashBlock/>
+      </div>
     </div>
   )
 }
