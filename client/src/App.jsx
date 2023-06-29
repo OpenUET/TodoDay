@@ -4,6 +4,7 @@ import mongoLogo from './assets/mongodb.svg'
 import nodeLogo from './assets/nodejs.svg'
 import reactLogo from './assets/react.svg'
 import Profile from './components/Profile'
+import StreakModal from './components/StreakModal'
 import TaskWeight from './components/TaskWeight'
 import { handleGetUsersAPI } from './services/user'
 import viteLogo from '/vite.svg'
@@ -41,7 +42,6 @@ function App() {
   ])
 
   useEffect(() => {
-    console.log(import.meta.env.VITE_API_BASE_URL)
     handleGetUsersAPI()
       .then((res) => res.data?.users)
       .then((users) => {
@@ -101,6 +101,8 @@ function App() {
           </div>
         ))}
       </div>
+
+      <StreakModal />
     </>
   )
 }

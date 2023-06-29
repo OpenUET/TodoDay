@@ -6,8 +6,7 @@ export const getAllUsers = catchAsync((req, res) => {
     users: [
       {
         name: 'trantuananh',
-        avatar:
-          'https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-6/340920909_903735680891461_3182682436424991510_n.jpg?_nc_cat=102&cb=99be929b-59f725be&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=MUSJbL7U1qoAX9eRYat&_nc_ht=scontent.fhan2-3.fna&oh=00_AfCobANVIuuJuZmLt2BhOmg_UvlWM2H7ZbfcvVzZRgHrzw&oe=649A89D5',
+        avatar: 'https://www.linkpicture.com/q/340920909_903735680891461_3182682436424991510_n.jpg',
         github: 'https://github.com/Niichan1403',
       },
       {
