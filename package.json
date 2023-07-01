@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "concurrently \"cd server && yarn dev \" \" cd client && yarn dev \"" 
+    "dev": "concurrently \"cd server && yarn dev \" \" cd client && yarn dev \""
   },
   "dependencies": {
     "concurrently": "^8.2.0"
