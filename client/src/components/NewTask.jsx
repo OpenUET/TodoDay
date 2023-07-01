@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-function NewTask({ bcolor }) {
+function NewTask({ bcolor, tcolor }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [taskName, setTaskName] = useState('');
   const [taskDescription, setTaskDescription] = useState('');
 
-  const bcolorClass = bcolor === "green" ? "border-[#58a700]" : (bcolor === "red" ? "border-[#f81c1c]" : "border-[#1899d6]");
+  const bcolorClass = bcolor === "green" ? "border-[#58a700]" : (bcolor === "red" ? "border-[#f81c1c]" : (bcolor === "grey" ? "border-[#3c3c3c]" : "border-[#1899d6]"));
+  const tcolorClass = tcolor === "grey" ? "text-[#444444]" : "text-white";
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -28,7 +29,7 @@ function NewTask({ bcolor }) {
   return (
     <div className="w-full">
       <button
-        className={`bg-transparent border-[3px] ${bcolorClass} border-dashed text-white font-bold py-2 px-4 rounded-2xl w-full`}
+        className={`bg-transparent border-[3px] ${bcolorClass} border-dashed ${tcolorClass} font-bold py-2 px-4 rounded-2xl w-full`}
         onClick={openModal}
       >
         New Task

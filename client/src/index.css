@@ -77,6 +77,10 @@ h1 {
   }
 }
 
+.gradient-background {
+  background: linear-gradient(135deg, rgba(38, 246, 99, 0.30) 0%, rgba(38, 138, 255, 0.30) 52.00%, rgba(252, 85, 255, 0.30) 100%), #000437;
+}
+
 .fade-in {
 	-webkit-animation: fade-in 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
