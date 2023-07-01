@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import fireGem from '../assets/fire-gem.svg'
 import closeIcon from '../assets/icons/close.svg'
+import { Link } from 'react-router-dom'
 
 // prettier-ignore
 const h1Phrases = [
@@ -89,9 +90,12 @@ export default function StreakModal() {
             </div>
 
             <div className='my-8 flex justify-center w-full gap-40'>
-              <button className='min-w-32 text-yellow-100 bg-yellow-600 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-amber-500 hover:border-none focus:outline-none focus:shadow-none font-medium rounded-full text-lg px-5 py-2.5 text-center'>
-                View statistics
-              </button>
+              <Link
+                to='/dashboard'
+                className='no-underline	min-w-32 text-yellow-100 bg-yellow-600 transition ease-in-out delay-150 hover:text-yellow-100 hover:-translate-y-1 hover:scale-110 hover:bg-amber-500 hover:border-none focus:outline-none focus:shadow-none font-medium rounded-full text-lg px-5 py-2.5 text-center'
+              >
+                View dashboard
+              </Link>
 
               <button
                 className='flex items-center justify-center gap-1.5 w-32 text-red-100 bg-red-700 hover:bg-red-800 focus:outline-none focus:shadow-none focus:border-none font-medium rounded-full text-lg px-5 py-2.5 text-center hover:border-none hover:outline-none hover:shadow-none hover:border-none'
