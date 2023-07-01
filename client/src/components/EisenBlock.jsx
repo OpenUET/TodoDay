@@ -10,11 +10,11 @@ const EisenBlock = ({ color, bcolor, name }) => {
   return (
     <div className={eisenClasses}>
       <div className="text-xl font-bold uppercase mb-2">{name}</div>
+      <NewTask bcolor={bcolor}/>
       <div className="overflow-y-auto w-full">
         <Task name = "Example"/>
         <Task name = "Example"/>
         <Task name = "Example"/>
-        <NewTask bcolor={bcolor}/>
       </div>
     </div>
   );

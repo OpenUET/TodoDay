@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="flex flex-col bg-transparent w-full h-auto">
-      <div className="text-black m-8 flex items-center justify-center">Tododay</div>
+      <div className="text-white m-8 flex items-center justify-center">Tododay</div>
       <div className="flex">
         <EisenBlock color={"green"} bcolor={"green"} name={"Todo now"}/>
         <EisenBlock color={"blue"} bcolor={"blue"} name={"Planning"}/>
