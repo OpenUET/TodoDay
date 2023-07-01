@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import fireGem from '../assets/fire-gem.svg'
-import closeIcon from '../assets/icons/close.svg'
+import { IoClose } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
 // prettier-ignore
@@ -101,7 +101,7 @@ export default function StreakModal() {
                 className='flex items-center justify-center gap-1.5 w-32 text-red-100 bg-red-700 hover:bg-red-800 focus:outline-none focus:shadow-none focus:border-none font-medium rounded-full text-lg px-5 py-2.5 text-center hover:border-none hover:outline-none hover:shadow-none hover:border-none'
                 onClick={handleOnClose}
               >
-                <img src={closeIcon} className='w-5 pt-0.5' />
+                <IoClose />
                 Close
               </button>
             </div>
