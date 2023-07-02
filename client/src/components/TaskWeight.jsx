@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { toast } from "react-hot-toast"
 import ReactSlider from "react-slider"
+import { TodoListContext } from "../context/TodoListContext"
 
-export default function TaskWeight({ weight, setWeight, maxWeight }) {
+export default function TaskWeight({ weight, setWeight }) {
+  const { maxWeight } = useContext(TodoListContext)
   const [isValid, setIsValid] = useState(true)
   const [isValidTotal, setIsValidTotal] = useState(true)
 

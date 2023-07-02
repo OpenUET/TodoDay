@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ImCheckmark, ImPencil } from "react-icons/im";
 import TaskWeight from './TaskWeight';
+import { TodoListContext } from '../context/TodoListContext';
 
-function Task({ name, weight, setWeight, maxWeight }) {
+function Task({ name, weight, setWeight, status, setStatus }) {
+  const { view } = useContext(TodoListContext);
   const [isButtonVisible, setIsButtonVisible] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
+  const isChecked = (status === "complete");
 
-  const handleCheck = () => {
-    setIsChecked(!isChecked);
+  const toggleComplete = () => {
+    setStatus(isChecked ? "incomplete" : "complete");
   };
 
   const handleMouseEnter = () => {
@@ -25,17 +27,18 @@ function Task({ name, weight, setWeight, maxWeight }) {
           <div className="flex flex-1 items-center">{name}</div>
 
           <div className="flex flex-1 justify-end items-center gap-4" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <TaskWeight
-              weight={weight}
-              setWeight={setWeight}
-              maxWeight={maxWeight}
-            />
+            {view === "List" && (
+              <TaskWeight
+                weight={weight}
+                setWeight={setWeight}
+              />
+            )}
 
             <button className={`${isButtonVisible ? "flex fade-in" : "invisible"} bg-[#ffc800] hover:bg-[#ffd745] transition-colors duration-300 p-2 rounded`}>
               <ImPencil className="text-white" />
             </button>
 
-            <button className={`${isChecked ? "bg-[#58cc02] hover:bg-[#79d731]" : "border-[#58cc02] hover:border-[#79d731]"} border-2 transition-colors duration-300 p-2 rounded`} onClick={handleCheck}>
+            <button className={`${isChecked ? "bg-[#58cc02] hover:bg-[#79d731]" : "border-[#58cc02] hover:border-[#79d731]"} border-2 transition-colors duration-300 p-2 rounded`} onClick={toggleComplete}>
               <ImCheckmark className={`${isChecked ? "text-white" : "text-[#58c002]"}`} />
             </button>
           </div>
