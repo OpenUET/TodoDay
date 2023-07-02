@@ -1,0 +1,34 @@
+.nice-dates-navigation,
+.nice-dates-week-header_day,
+.nice-dates-day {
+    font-size: 16px;
+}
+
+.nice-dates-day::before {
+    background-color: #fad74c;
+}
+
+.nice-dates-day::after {
+    border: 2px solid #e2911e;
+}
+
+.nice-dates-day.-selected:not(:hover) * {
+    color: #ff0909;
+}
+
+.nice-dates-day.-selected-dayoff::before {
+    content: '🚩';
+    text-align: center;
+    padding-top: 16%;
+    padding-left: 5%;
+    font-size: x-large;
+    z-index: 4;
+}
+
+/* .nice-dates-popover {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    max-width: 480px;
+    transition: none;
+} */
