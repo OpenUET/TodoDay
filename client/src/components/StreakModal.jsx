@@ -70,7 +70,7 @@ export default function StreakModal() {
         >
           <div className='flex flex-col gap-5 justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
             <div className='flex flex-col' name={'Modal header'}>
-              <h1 className='leading-loose text-5xl font-bold bg-gradient-to-b from-amber-100 to-yellow-500 bg-clip-text text-transparent'>
+              <h1 className='text-center leading-loose text-5xl font-bold bg-gradient-to-b from-amber-100 to-yellow-500 bg-clip-text text-transparent'>
                 {getRandomElement(h1Phrases)}
               </h1>
               <h2 className='text-yellow-200 text-3xl'>🔥 {getRandomElement(h2Sentences)} 🔥</h2>

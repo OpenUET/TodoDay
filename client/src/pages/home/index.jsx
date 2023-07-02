@@ -56,7 +56,7 @@ export default function Home() {
   }, [tasks])
 
   return (
-    <>
+    <div className='flex flex-col place-items-center'>
       <h1 className='italic'>
         Hello{' '}
         <span className='text-transparent text-6xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>
@@ -75,7 +75,7 @@ export default function Home() {
       </div>
 
       <div className='flex gap-2 my-10'>
-        {users.length &&
+        {users.length !== 0 &&
           users.map((profile, index) => {
             return <Profile key={index} index={index} profile={profile} />
           })}
@@ -103,6 +103,6 @@ export default function Home() {
       </div>
 
       <StreakModal />
-    </>
+    </div>
   )
 }
