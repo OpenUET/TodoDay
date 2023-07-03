@@ -22,6 +22,9 @@
 #root {
   margin: 0 auto;
   inset: 0;
+  max-width: 1280px;
+  padding: 2rem;
+  text-align: center;
 }
 
 /* Scrollbar Width */

@@ -51,8 +51,9 @@ export default function StreakModal() {
     <>
       {/* TODO: Remove this button later */}
       <button
-        className='bg-green-500 text-white active:bg-green-600 outline-none focus:outline-none shadow'
+        className='bg-green-500 text-white active:bg-green-600 outline-none focus:outline-none shadow p-3 rounded-full'
         onClick={() => setShowModal(true)}
+        title='Only used for demo purpose, will be removed soon!'
       >
         Open demo modal
       </button>
@@ -111,7 +112,16 @@ export default function StreakModal() {
         </div>
       ) : null}
 
-      {showModal && <ConfettiExplosion zIndex={100}/>}
+      {showModal && (
+        <ConfettiExplosion
+          zIndex={100}
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%'
+          }}
+        />
+      )}
     </>
   )
 }
