@@ -4,6 +4,8 @@ import Task from './Task';
 import { AiFillQuestionCircle } from "react-icons/ai";
 
 const ListView = ({ tasks, setTasks, maxWeight }) => {
+  const completedWeight = tasks.filter((task) => task.status).reduce((acc, task) => acc + (task.newWeight || task.weight), 0) * 10
+
   const onSetTaskWeight = (index, newWeight) => {
     const tasksCopy = [...tasks]
     tasksCopy[index].newWeight = newWeight
@@ -19,7 +21,7 @@ const ListView = ({ tasks, setTasks, maxWeight }) => {
 
         <div className='flex-1 flex justify-end items-center gap-1'>
           <span>Complete: </span>
-          <span>{tasks.filter((task) => task.status).reduce((acc, task) => acc + (task.newWeight || task.weight), 0) * 10}</span>
+          <span>{completedWeight}</span>
           <span>/</span>
           <span className={maxWeight ? "text-red-500" : ""}>{(10 - maxWeight) * 10}%</span>
 

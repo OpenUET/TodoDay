@@ -143,7 +143,7 @@ export default function Home() {
 
       <div className='flex flex-col items-center text-center bg-transparent w-full h-auto m-auto'>
         <div className='w-full flex mb-4 items-center justify-start'>
-          <img src="../../../public/logo/tododay-green.png" alt="tododay" className="w-[25%] h-auto filter-logo-white"/>
+          <img src="../../../public/logo/tododay-green.png" alt="tododay" className="w-[25%] h-auto filter-logo-white" />
           <button onClick={changeView} className='p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[64px] flex justify-center items-center'>{view} View</button>
         </div>
 
@@ -176,7 +176,7 @@ export default function Home() {
           )}
         </div>
 
-        <StreakModal />
+        <StreakModal tasks={tasks} />
       </div>
     </TodoListContext.Provider>
   )
