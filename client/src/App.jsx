@@ -53,10 +53,10 @@ function App() {
       <ToasterProvider />
 
       <div className="flex flex-col bg-transparent w-full h-auto">
-        <div className="text-white text-2xl font-bold flex justify-start">Tododay</div>
+        <div className="flex justify-center items-center"><img src="../logo/tododay-white.png" alt="tododay" className="w-1/2 h-auto"/></div>
 
         <div className="flex mb-4 items-center justify-center">
-          <button onClick={changeView} className="p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[64px]">{view} View</button>
+          <button onClick={changeView} className="p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[56px]">{view} View</button>
         </div>
 
         {view == "List" && (
