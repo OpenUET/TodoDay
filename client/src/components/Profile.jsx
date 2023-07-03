@@ -6,7 +6,7 @@ export default function Profile({ index, profile }) {
   const { name, avatar, github, role = 'Web developer' } = profile
   return (
     <div className='w-40'>
-      <img src={avatar} className='mx-auto mb-4 w-24 rounded-full shadow-lg' alt={name} />
+      <img src={avatar} className='mx-auto mb-4 w-24 rounded-full shadow-lg' alt={name} loading='lazy' />
       <a href={github}>
         <h5 className={`mb-2 text-xl font-medium`} style={{ color: `${nameColors[index]}` }}>
           #{name}
