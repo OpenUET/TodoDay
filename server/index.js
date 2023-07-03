@@ -5,7 +5,7 @@ import { corsOptions } from '#config/cors.js';
 import cors from 'cors';
 import express from 'express';
 import httpStatus from 'http-status';
-
+import mongoose from 'mongoose';
 const app = express();
 
 setupMiddlewares();
@@ -32,6 +32,18 @@ function initRoutes() {
       message: '404 Not Found',
     });
   });
+  
+  (async () => {
+    try {
+      await mongoose.connect(appConfig.mongoURI,{
+        dbName: 'tododay',
+      });
+      console.log("Connect to mongoose is successful!");
+    } catch (error) {
+      console.log("Caught! Cannot connect to mongodb: ", error);
+    }
+  })();
+  
 }
 
 function setupErrorHandler() {
