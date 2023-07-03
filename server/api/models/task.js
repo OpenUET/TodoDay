@@ -11,7 +11,7 @@ const taskSchema = new Schema(
       type: String,
       default: "",
     },
-    priority:{
+    weight:{
         type: Number,
         default:0,
         require:true,

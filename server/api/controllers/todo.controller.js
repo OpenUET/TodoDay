@@ -23,13 +23,13 @@ export const getAllTasks = async (req, res) => {
 
 export const createTask = async (req, res) => {
     
-  const { title, description, status,priority } = req.body;
+  const { title, description, status,weight } = req.body;
 
   const newTask = await Task.create({
     title,
     description,
     status,
-    priority
+    weight
   });
 
   return res.status(200).json({ newTask });
@@ -37,14 +37,14 @@ export const createTask = async (req, res) => {
 
 export const updateTask = async (req, res) => {
   const { id } = req.params;
-  const { title, description, priority } = req.body;
+  const { title, description, weight } = req.body;
 
   const taskUpdated = await Task.findByIdAndUpdate(
     id,
     {
       title,
       description,
-      priority,
+      weight,
     },
     { new: true }
   );
