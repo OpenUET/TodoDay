@@ -11,10 +11,10 @@ const taskSchema = new Schema(
       type: String,
       default: "",
     },
-    weight:{
-        type: Number,
-        default:0,
-        require:true,
+    weight: {
+      type: Number,
+      default: 0,
+      require: true,
     },
     status: {
       type: Boolean,
@@ -26,4 +26,4 @@ const taskSchema = new Schema(
   }
 );
 
-export default mongoose.model("Task", taskSchema,'tasks');
+export default mongoose.model("Task", taskSchema, 'tasks');

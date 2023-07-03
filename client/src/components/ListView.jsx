@@ -6,13 +6,8 @@ import { AiFillQuestionCircle } from "react-icons/ai";
 const ListView = ({ tasks, setTasks, maxWeight }) => {
   const onSetTaskWeight = (index, newWeight) => {
     const tasksCopy = [...tasks]
-    tasksCopy[index].weight = newWeight
-    setTasks(tasksCopy)
-  }
-
-  const onSetTaskStatus = (index, newStatus) => {
-    const tasksCopy = [...tasks]
-    tasksCopy[index].status = newStatus
+    // tasksCopy[index].weight = newWeight
+    tasksCopy[index].newWeight = newWeight
     setTasks(tasksCopy)
   }
 
@@ -25,9 +20,9 @@ const ListView = ({ tasks, setTasks, maxWeight }) => {
 
         <div className='flex-1 flex justify-end items-center gap-1'>
           <span>Complete: </span>
-          <span>{tasks.filter((task) => task.status === 'complete').reduce((acc, task) => acc + task.weight, 0) * 10}</span>
+          <span>{tasks.filter((task) => task.status).reduce((acc, task) => acc + (task.newWeight || task.weight), 0) * 10}</span>
           <span>/</span>
-          <span className={maxWeight && "text-red-500"}>{(10 - maxWeight) * 10}%</span>
+          <span className={maxWeight ? "text-red-500" : ""}>{(10 - maxWeight) * 10}%</span>
 
           <AiFillQuestionCircle size={16} title={"Task weight % = Importance * Time cost %"} />
         </div>
@@ -38,12 +33,12 @@ const ListView = ({ tasks, setTasks, maxWeight }) => {
       <div className="overflow-y-auto w-full">
         {tasks.map((task, index) => (
           <Task
-            key={index}
-            name={task.name}
-            weight={task.weight}
+            key={task._id || index}
+            _id={task._id}
+            name={task.title}
+            weight={task.newWeight || task.weight}
             setWeight={(newWeight) => onSetTaskWeight(index, newWeight)}
             status={task.status}
-            setStatus={(newStatus) => onSetTaskStatus(index, newStatus)}
           />
         ))}
       </div>

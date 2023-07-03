@@ -22,8 +22,8 @@ export const getAllTasks = async (req, res) => {
 };
 
 export const createTask = async (req, res) => {
-    
-  const { title, description, status,weight } = req.body;
+
+  const { title, description, status, weight } = req.body;
 
   const newTask = await Task.create({
     title,
@@ -37,7 +37,7 @@ export const createTask = async (req, res) => {
 
 export const updateTask = async (req, res) => {
   const { id } = req.params;
-  const { title, description, weight } = req.body;
+  const { title, description, weight, status } = req.body;
 
   const taskUpdated = await Task.findByIdAndUpdate(
     id,
@@ -45,6 +45,7 @@ export const updateTask = async (req, res) => {
       title,
       description,
       weight,
+      status
     },
     { new: true }
   );
