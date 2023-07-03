@@ -31,12 +31,9 @@ export default function Home() {
       <ToasterProvider />
 
       <div className='text-center bg-transparent w-full h-auto m-auto'>
-        <h1 className='text-white text-2xl font-bold flex justify-start'>Tododay</h1>
-
-        <div className='flex mb-4 items-center justify-center'>
-          <button onClick={changeView} className='p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[64px]'>
-            {view} View
-          </button>
+        <div className='flex mb-4 items-center justify-start'>
+          <img src="../../../public/logo/tododay-green.png" alt="tododay" className="w-[25%] h-auto filter-logo-white"/>
+          <button onClick={changeView} className='p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[64px]'>{view} View</button>
         </div>
 
         {view == 'List' && (
