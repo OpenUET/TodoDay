@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import fireGem from '../assets/fire-gem.svg'
+import ConfettiExplosion from 'react-confetti-explosion'
 import { IoClose } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
-import ConfettiExplosion from 'react-confetti-explosion'
+import fireGem from '../assets/fire-gem.svg'
 
 // prettier-ignore
 const h1Phrases = [

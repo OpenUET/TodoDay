@@ -30,8 +30,8 @@ export default function Home() {
     <TodoListContext.Provider value={{ view, maxWeight }}>
       <ToasterProvider />
 
-      <div className='flex flex-col bg-transparent w-full h-auto m-auto justify-center items-center'>
-        <div className='text-white text-2xl font-bold flex justify-start'>Tododay</div>
+      <div className='text-center bg-transparent w-full h-auto m-auto'>
+        <h1 className='text-white text-2xl font-bold flex justify-start'>Tododay</h1>
 
         <div className='flex mb-4 items-center justify-center'>
           <button onClick={changeView} className='p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[64px]'>
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         {view == 'List' && (
-          <div className='h-[556px] w-[1086px]'>
+          <div className='m-auto h-[556px] w-[1086px]'>
             <ListView tasks={tasks} setTasks={setTasks} maxWeight={maxWeight} />
           </div>
         )}

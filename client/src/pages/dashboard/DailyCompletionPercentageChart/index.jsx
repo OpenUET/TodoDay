@@ -18,7 +18,10 @@ const options = {
   plugins: {
     legend: {
       position: 'bottom',
-      onClick: (e) => e.stopPropagation()
+      onClick: (e) => e.stopPropagation(),
+      labels: {
+        font: { size: 17 }
+      }
     },
     title: {
       display: false
@@ -27,17 +30,26 @@ const options = {
   scales: {
     x: {
       border: {
-        color: 'red'
+        color: 'rgba(255, 151, 0, 0.8)',
+        width: 0.5
+      },
+      ticks: {
+        font: { size: 16 }
       }
     },
     y: {
+      border: {
+        color: 'rgba(255, 151, 0, 0.8)',
+        width: 0.5
+      },
       beginAtZero: true,
       max: 100,
       ticks: {
         steps: 10,
         callback: function (value, index, ticks) {
           return value + '%'
-        }
+        },
+        font: { size: 16 }
       }
     }
   }
@@ -49,15 +61,15 @@ const data = {
   labels,
   datasets: [
     {
-      label: 'My First dataset',
-      borderWidth: 1,
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      label: 'Task Completion Rate',
+      borderWidth: 4,
+      borderColor: 'rgba(255, 151, 0, 1)',
+      backgroundColor: 'rgba(255, 151, 0, 0.5)',
       data: [65, 59, 80, 81, 56, 55, 40]
     }
   ]
 }
 
 export default function DailyCompletionPercentageChart() {
-  return <Line options={options} data={data} />
+  return <Line options={options} data={data} height={'220px'} />
 }

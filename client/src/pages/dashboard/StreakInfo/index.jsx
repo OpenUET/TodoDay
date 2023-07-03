@@ -8,10 +8,10 @@ const getDiffDays = (date1, date2) => {
 
 export default function StreakInfo({ icon, text, startDate, endDate }) {
   return (
-    <div className='h-full border-b-2 w-full flex flex-row flex-auto text-center'>
+    <div className='h-full border-b-2 border-stone-600 w-full flex flex-row flex-auto text-center text-amber-100'>
       <div className='w-24 flex justify-center items-center font-2xl'>{icon}</div>
       <div className='grow flex w-full flex-col justify-center items-start'>
-        <p className='text-xl font-semibold'>{getDiffDays(startDate, endDate)} days</p>
+        <p className='text-xl font-semibold text-amber-400'>{getDiffDays(startDate, endDate)} days</p>
         <p>{text}</p>
       </div>
     </div>
