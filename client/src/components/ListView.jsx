@@ -11,7 +11,7 @@ const ListView = ({ tasks, setTasks, maxWeight }) => {
   }
 
   return (
-    <div className="gradient-background p-6 m-2 rounded-2xl flex flex-1 flex-col items-center justify-start w-full h-full">
+    <div className="gradient-background border-[3px] p-6 rounded-2xl flex flex-1 flex-col items-center justify-start w-full h-full">
       <div className='w-full mb-6 flex'>
         <div className='flex-1'></div>
 

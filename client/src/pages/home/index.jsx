@@ -141,14 +141,13 @@ export default function Home() {
     <TodoListContext.Provider value={{ view, maxWeight, onCreateTask, onEditTask, onDeleteTask }} >
       <ToasterProvider />
 
-      <div className="flex flex-col items-center bg-transparent w-full h-auto">
-        <div className="w-full text-white text-2xl font-bold flex justify-start">Tododay</div>
-
-        <div className="flex mb-4 items-center justify-center">
-          <button onClick={changeView} className="p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[64px] flex justify-center items-center">{view} View</button>
+      <div className='flex flex-col items-center text-center bg-transparent w-full h-auto m-auto'>
+        <div className='w-full flex mb-4 items-center justify-start'>
+          <img src="../../../public/logo/tododay-green.png" alt="tododay" className="w-[25%] h-auto filter-logo-white"/>
+          <button onClick={changeView} className='p-4 text-[#444444] bg-white rounded-2xl w-[151px] h-[64px] flex justify-center items-center'>{view} View</button>
         </div>
 
-        <div className="h-[556px] w-[90vw]">
+        <div className="h-[556px] w-[85vw]">
           {view == "List" && (
             <ListView
               tasks={tasks}
