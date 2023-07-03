@@ -6,7 +6,6 @@ import { AiFillQuestionCircle } from "react-icons/ai";
 const ListView = ({ tasks, setTasks, maxWeight }) => {
   const onSetTaskWeight = (index, newWeight) => {
     const tasksCopy = [...tasks]
-    // tasksCopy[index].weight = newWeight
     tasksCopy[index].newWeight = newWeight
     setTasks(tasksCopy)
   }
