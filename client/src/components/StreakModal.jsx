@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import fireGem from '../assets/fire-gem.svg'
 import { IoClose } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
+import ConfettiExplosion from 'react-confetti-explosion'
 
 // prettier-ignore
 const h1Phrases = [
@@ -109,6 +110,8 @@ export default function StreakModal() {
           <div id='modal-backdrop' className='opacity-90 fixed inset-0 z-40 bg-black'></div>
         </div>
       ) : null}
+
+      {showModal && <ConfettiExplosion zIndex={100}/>}
     </>
   )
 }
