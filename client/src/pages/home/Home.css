@@ -1,14 +1,3 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.filter-logo-white {
-  filter: invert(1) brightness(6) hue-rotate(180deg);
-}
-
 .logo {
   height: 5.5em;
   padding: 0.5em;
@@ -39,10 +28,6 @@
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 .weight-track-0 {
