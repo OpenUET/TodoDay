@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import userRouter from './user.route.js';
 import todoRouter from './todo.route.js';
+import streakRouter from './streak.route.js'
 
 const router = Router();
 
-router.use('/users', userRouter);
-router.use('/todo',todoRouter)
+router.use('/todo', todoRouter)
+router.use('/streak', streakRouter)
+
 export default router;

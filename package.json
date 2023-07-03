@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "dev:install": "concurrently \"cd server && yarn install \" \" cd client && yarn install \"",
     "dev": "concurrently \"cd server && yarn dev \" \" cd client && yarn dev \""
   },
   "dependencies": {

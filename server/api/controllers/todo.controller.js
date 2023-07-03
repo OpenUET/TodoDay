@@ -1,5 +1,5 @@
-
-import Task from "../models/task.js";
+import Day from "../models/Day.js";
+import Task from "../models/Task.js";
 
 // req: request : url, params, body, header
 // export const getNote = async (req, res) => {
@@ -22,8 +22,7 @@ export const getAllTasks = async (req, res) => {
 };
 
 export const createTask = async (req, res) => {
-    
-  const { title, description, status,weight } = req.body;
+  const { title, description, status, weight } = req.body;
 
   const newTask = await Task.create({
     title,
@@ -32,12 +31,20 @@ export const createTask = async (req, res) => {
     weight
   });
 
-  return res.status(200).json({ newTask });
+  const newDay = await Day.findOneAndUpdate(
+    { "date": new Date().toDateString() },
+    {
+      $push: { tasks: newTask._id }
+    },
+    { upsert: true, new: true }
+  )
+
+  return res.status(200).json({ newTask, newDay });
 };
 
 export const updateTask = async (req, res) => {
   const { id } = req.params;
-  const { title, description, weight } = req.body;
+  const { title, description, weight, status } = req.body;
 
   const taskUpdated = await Task.findByIdAndUpdate(
     id,
@@ -45,9 +52,23 @@ export const updateTask = async (req, res) => {
       title,
       description,
       weight,
+      status
     },
     { new: true }
   );
+
+  if (status) {
+    // update completion
+    await Day.findOneAndUpdate(
+      {
+        $and: [
+          { date: new Date().toDateString() },
+          { tasks: { $in: [id] } }
+        ]
+      },
+      { $inc: { completion: weight } }
+    )
+  }
 
   return res.status(200).json({ taskUpdated });
 };

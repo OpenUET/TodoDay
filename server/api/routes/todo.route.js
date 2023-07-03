@@ -1,18 +1,19 @@
 import { Router } from 'express';
 import { catchAsync } from '../utils/catchAsync.js';
 import { validateCreateTask, validateUpdateTask } from '../middlewares/validate/task.js';
-import { createTask, deleteTask, getAllTasks, updateTask } from '../controllers/todo.controller.js';
+import * as controller from '../controllers/todo.controller.js';
 
-const todoRouter = Router();
+const router = Router();
 
-todoRouter.get("/", catchAsync(getAllTasks));
+router.get("/", catchAsync(controller.getAllTasks));
 
 //POST: Them du lieu, body params
-todoRouter.post("/", validateCreateTask, catchAsync(createTask));
+router.post("/", validateCreateTask, catchAsync(controller.createTask));
 
 //PUT: Sua du lieu, body params
-todoRouter.put("/:id", validateUpdateTask, catchAsync(updateTask));
+router.put("/:id", validateUpdateTask, catchAsync(controller.updateTask));
 
 //DELETE: Xoa du lieu, query params
-todoRouter.delete("/:id", catchAsync(deleteTask));
-export default todoRouter;
+router.delete("/:id", catchAsync(controller.deleteTask));
+
+export default router;
