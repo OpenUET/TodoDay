@@ -8,14 +8,14 @@ import fireGem from '../assets/fire-gem.svg'
 const h1Phrases = [
   'Amazing job!',
   'Way to go!',
-  'Woohoo!', 
+  'Woohoo!',
   'Bravo!',
   'Keep it up!',
 ]
 
 // prettier-ignore
 const h2Sentences = [
-  `You're on a fantastic streak!`, 
+  `You're on a fantastic streak!`,
   `You're on fire with your streak!`,
   `Your streak continues to impress!`,
   `You've maintained your streak!`,
@@ -26,8 +26,17 @@ const getRandomElement = (arr) => {
   return arr?.at(Math.floor(Math.random() * arr.length))
 }
 
-export default function StreakModal() {
+export default function StreakModal({ tasks }) {
   const [showModal, setShowModal] = useState(false)
+  const [isDisplayedOnce, setIsDisplayedOnce] = useState(false)
+
+  useEffect(() => {
+    const completedWeight = tasks.filter((task) => task.status).reduce((acc, task) => acc + (task.newWeight || task.weight), 0) * 10
+    if (completedWeight < 70 || isDisplayedOnce) return
+
+    setIsDisplayedOnce(true)
+    setShowModal(true)
+  }, [tasks])
 
   useEffect(() => {
     if (!showModal) return
@@ -50,13 +59,13 @@ export default function StreakModal() {
   return (
     <>
       {/* TODO: Remove this button later */}
-      <button
+      {/* <button
         className='bg-green-500 text-white active:bg-green-600 outline-none focus:outline-none shadow p-3 rounded-full'
         onClick={() => setShowModal(true)}
         title='Only used for demo purpose, will be removed soon!'
       >
         Open demo modal
-      </button>
+      </button> */}
 
       {showModal ? (
         <div

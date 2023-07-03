@@ -11,4 +11,5 @@ export const updateTaskSchema = Joi.object({
     title: Joi.string(),
     description: Joi.string().allow(""),
     weight: Joi.number().allow(0),
+    status: Joi.boolean().allow(null),
   });
