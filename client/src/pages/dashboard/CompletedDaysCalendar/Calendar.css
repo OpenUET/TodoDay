@@ -1,0 +1,51 @@
+.nice-dates-navigation_current {
+    font-size: x-large;
+}
+
+.nice-dates-navigation,
+.nice-dates-week-header_day,
+.nice-dates-day {
+    font-size: 18px;
+}
+
+.nice-dates-day::before {
+    background-color: #fef2dd;
+}
+
+.nice-dates-day::after {
+    border: 2px solid #fe8300;
+}
+
+.nice-dates-day.-selected * {
+    font-weight: 500;
+    font-size: large;
+}
+
+.nice-dates-day.-selected:not(:hover) * {
+    color: #fe8300;
+}
+
+.nice-dates-day.-selected.-selected-start:not(:hover) * {
+    color: white;
+}
+
+.nice-dates-day.-selected.-selected-start::after {
+    opacity: 1;
+    background-color: #fe8300;
+}
+
+.nice-dates-day.-selected-dayoff::before {
+    content: '😴';
+    text-align: center;
+    padding-top: 10%;
+    padding-left: 5%;
+    font-size: xx-large;
+    z-index: 4;
+}
+
+.nice-dates-day.-today::before {
+    content: 'Today';
+    text-align: center;
+    font-size: large;
+    color: salmon;
+}

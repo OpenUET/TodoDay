@@ -21,6 +21,7 @@
 
 #root {
   margin: 0 auto;
+  inset: 0;
 }
 
 a {
