@@ -13,6 +13,7 @@ const taskSchema = new Schema(
     },
     weight: {
       type: Number,
+      default: 0,
       min: 0,
       max: 50,
       required: true,

@@ -22,6 +22,7 @@ export const getAllTasks = async (req, res) => {
 };
 
 export const createTask = async (req, res) => {
+
   const { title, description, status, weight } = req.body;
 
   const newTask = await Task.create({
