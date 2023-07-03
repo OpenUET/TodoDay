@@ -7,8 +7,8 @@ export const createTaskSchema = Joi.object({
   status: Joi.boolean().allow(null).default(false),
 });
 
-export const updateNoteSchema = Joi.object({
+export const updateTaskSchema = Joi.object({
     title: Joi.string(),
     description: Joi.string().allow(""),
-    status: Joi.boolean(),
+    priority: Joi.number().allow(0),
   });

@@ -35,22 +35,22 @@ export const createTask = async (req, res) => {
   return res.status(200).json({ newTask });
 };
 
-// export const updateNote = async (req, res) => {
-//   const { id } = req.params;
-//   const { title, description, status } = req.body;
+export const updateTask = async (req, res) => {
+  const { id } = req.params;
+  const { title, description, priority } = req.body;
 
-//   const noteUpdated = await Note.findByIdAndUpdate(
-//     id,
-//     {
-//       title,
-//       description,
-//       status,
-//     },
-//     { new: true }
-//   );
+  const taskUpdated = await Task.findByIdAndUpdate(
+    id,
+    {
+      title,
+      description,
+      priority,
+    },
+    { new: true }
+  );
 
-//   return res.status(200).json({ noteUpdated });
-// };
+  return res.status(200).json({ taskUpdated });
+};
 
 export const deleteTask = async (req, res) => {
   const { id } = req.params;
@@ -64,12 +64,4 @@ export const deleteTask = async (req, res) => {
   return res.status(200).json({ tasks });
 };
 
-// export const searchNote = async (req, res) => {
-//   const { title } = req.query;
 
-//   if (!title) throw new HttpException(400, "Title is required");
-
-//   const notes = await Note.find({ title: { $regex: title, $options: "i" } });
-
-//   return res.status(200).json({ notes });
-// };
