@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.filter-logo-white {
+  filter: invert(1) brightness(6) hue-rotate(180deg);
+}
+
 .logo {
   height: 5.5em;
   padding: 0.5em;
